@@ -45,7 +45,7 @@ public class DriveTrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void move(float x, float y, float twist){
-    	mecanumDrive.mecanumDrive_Cartesian(x, y, 0, 0);
+    	mecanumDrive.mecanumDrive_Cartesian(x, y, twist, 0);
     }
 }
 

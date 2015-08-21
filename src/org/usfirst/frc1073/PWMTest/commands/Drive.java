@@ -38,13 +38,17 @@ public class  Drive extends Command {
     protected void execute() {
     	float x = (float) Robot.oi.driver.getX();
     	float y = (float) Robot.oi.driver.getY();
+    	float twist = (float) Robot.oi.rotator.getX();
     	if(Math.abs(x) <= 0.05){
     		x = 0;
     	}
     	if(Math.abs(y) <= 0.05){
     		y = 0;
     	}
-    	Robot.driveTrain.move(x, y, 0);
+    	if(Math.abs(twist) <= 0.05){
+    		twist = 0;
+    	}
+    	Robot.driveTrain.move(x, y, twist);
     }
 
     // Make this return true when this Command no longer needs to run execute()
